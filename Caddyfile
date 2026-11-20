@@ -1,0 +1,9 @@
+{$RECOVERYPROOF_DOMAIN} {
+    encode zstd gzip
+    reverse_proxy controller:8000
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy no-referrer
+        Strict-Transport-Security "max-age=31536000"
+    }
+}

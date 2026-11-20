@@ -1,0 +1,20 @@
+services:
+  controller:
+    environment:
+      AZURE_LOCATION: ${AZURE_LOCATION:?Set in .env}
+      AZURE_RESOURCE_ID: ${AZURE_RESOURCE_ID:?Set in .env}
+  gateway:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      RECOVERYPROOF_DOMAIN: ${RECOVERYPROOF_DOMAIN:?Set in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    depends_on:
+      - controller
+    restart: unless-stopped
+volumes:
+  caddy-data:
