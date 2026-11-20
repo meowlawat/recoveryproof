@@ -2,7 +2,7 @@
 
 Live Azure demo: <https://recoveryproof-demo-7f2a.centralindia.cloudapp.azure.com>. The Azure operator key is stored in the local `.env.azure` file and on the VM in `~/RecoveryProof/.env`; neither belongs in source control.
 
-A small, working resilience lab built from `ppt3.pdf` and `RecoveryProof_Project_Report.pdf`. It runs one fixed Docker test workload, injects a bounded fault, records health probes and lifecycle evidence, evaluates detection/recovery limits, and exports JSON or Markdown reports. The slide deck's example numbers are **not** used as results.
+A small, working resilience lab built from the original [presentation](docs/reference/ppt3.pdf) and [project report](docs/reference/RecoveryProof_Project_Report.pdf). It runs one fixed Docker test workload, injects a bounded fault, records health probes and lifecycle evidence, evaluates detection/recovery limits, and exports JSON or Markdown reports. The slide deck's example numbers are **not** used as results.
 
 ## Start locally
 
